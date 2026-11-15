@@ -10,6 +10,7 @@
 - **Fresh snapshot on lock**: the layout is captured the moment the extension is disabled (screen lock), not up to `check-interval` seconds earlier.
 - **Monitor wait timeout**: if the monitor count doesn't match within 120 s after unlock (e.g. a monitor was unplugged while locked), restore is abandoned and tracking resumes, instead of polling forever.
 - Removed unused imports; error handling around state file read/write.
+- **Default `delay-after-unlock` is 0 s** (was 3 s): windows are restored as soon as the monitor count matches.
 
 Install: copy this directory to `~/.local/share/gnome-shell/extensions/window-pinner@dhharker.net/`, log out and back in, then `gnome-extensions enable window-pinner@dhharker.net`.
 
