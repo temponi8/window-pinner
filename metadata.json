@@ -1,9 +1,9 @@
 {
-  "description": "Periodically saves window positions and restores them on unlock. Fixes problem with windows getting moved around after monitor wake from screen lock on wayland. (Locally patched for GNOME 49/50.)",
+  "description": "Periodically saves window positions and restores them on unlock and when a monitor reconnects. Fixes problem with windows getting moved around after monitor wake from screen lock on wayland. (Locally patched for GNOME 49/50.)",
   "name": "Window Pinner",
   "settings-schema": "org.gnome.shell.extensions.window-pinner",
   "shell-version": ["46", "47", "48", "49", "50"],
   "url": "https://github.com/dhharker/window-pinner",
   "uuid": "window-pinner@dhharker.net",
-  "version": 5
+  "version": 6
 }

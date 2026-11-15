@@ -29,7 +29,7 @@ export default class WindowPinnerPrefs extends ExtensionPreferences {
         group.add(checkRow);
 
         // Delay after unlock row
-        const delayRow = new Adw.ActionRow({ title: 'Delay after unlock before repositioning windows (seconds):' });
+        const delayRow = new Adw.ActionRow({ title: 'Delay after unlock / monitor reconnect before repositioning windows (seconds):' });
         const delaySpin = new Gtk.SpinButton({
             adjustment: new Gtk.Adjustment({
                 lower: DELAY_AFTER_UNLOCK_MIN,

@@ -3,8 +3,8 @@
   <schema id="org.gnome.shell.extensions.window-pinner" path="/org/gnome/shell/extensions/window-pinner/">
     <key name="delay-after-unlock" type="i">
       <default>0</default>
-      <summary>Delay after unlock before repositioning windows</summary>
-      <description>Number of seconds to wait after unlocking the screen before repositioning windows.</description>
+      <summary>Delay after unlock or monitor reconnect before repositioning windows</summary>
+      <description>Number of seconds to wait after unlocking the screen or after a monitor (re)connects before repositioning windows (on top of a fixed 0.5 s settle time).</description>
     </key>
     <key name="check-interval" type="i">
       <default>5</default>

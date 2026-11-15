@@ -2,15 +2,15 @@
 
 > Personal fork of [dhharker/window-pinner](https://github.com/dhharker/window-pinner) (MIT, © 2025 David Harker), patched to run on GNOME Shell 49 and 50.
 
-## Changes in this fork (v5)
+## Changes in this fork (v6)
 
 - **GNOME 49/50 support**: uses the new `maximize()` / `unmaximize()` API (no flags), with a fallback for GNOME 46–48.
 - **Maximized windows**: saves maximized state and monitor; on restore, moves the window back to its monitor and re-maximizes it. (Originally, maximized windows stayed on the wrong monitor.)
 - **Fullscreen windows** are left alone.
 - **Fresh snapshot on lock**: the layout is captured the moment the extension is disabled (screen lock), not up to `check-interval` seconds earlier.
-- **Monitor wait timeout**: if the monitor count doesn't match within 120 s after unlock (e.g. a monitor was unplugged while locked), restore is abandoned and tracking resumes, instead of polling forever.
+- **Restore on monitor reconnect** (v6): one layout is saved per monitor configuration (keyed by monitor geometries). When a monitor connects again — after unplugging, or after it wakes up later than the unlock — the saved layout for that setup is restored. When a monitor disconnects, GNOME places the windows as usual and the multi-monitor layout stays saved. Recording pauses while a restore is pending so a scrambled layout is never saved over a good one.
 - Removed unused imports; error handling around state file read/write.
-- **Default `delay-after-unlock` is 0 s** (was 3 s): windows are restored as soon as the monitor count matches.
+- **Default `delay-after-unlock` is 0 s** (was 3 s): windows are restored 0.5 s after the monitor setup settles.
 
 Install: copy this directory to `~/.local/share/gnome-shell/extensions/window-pinner@dhharker.net/`, log out and back in, then `gnome-extensions enable window-pinner@dhharker.net`.
 
